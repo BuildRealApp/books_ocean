@@ -20,7 +20,7 @@
             <div class="row">
 
                 @include('shop.partials.filters')
-                @include('shop.partials.products')
+                @include('shop.partials.books')
 
             </div>
         </div>

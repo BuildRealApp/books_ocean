@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Book;
+
 class HomeController extends Controller
 {
 
@@ -13,6 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        return view('home.index', [
+            'lastBooks' => Book::latest()->take(5)->get()
+        ]);
     }
 }
