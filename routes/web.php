@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/shop/{slug?}', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/book/{book:slug}', [BookController::class, 'index'])->name('book.index');

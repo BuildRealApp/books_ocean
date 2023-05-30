@@ -21,13 +21,13 @@
                     <div class="properties pb-30">
                         <div class="properties-card">
                             <div class="properties-img">
-                                <a href="book-details.html">
+                                <a href="{{ route('book.index', [$book->slug]) }}">
                                     <img src="{{ asset("assets/img/gallery/$book->image_name") }}" alt="">
                                 </a>
                             </div>
                             <div class="properties-caption properties-caption2">
                                 <h3>
-                                    <a href="book-details.html">{{ $book->name }}</a>
+                                    <a href="{{ route('book.index', [$book->slug]) }}">{{ $book->name }}</a>
                                 </h3>
                                 <p>J. R Rain</p>
                                 <div class="properties-footer d-flex justify-content-between align-items-center">
@@ -58,10 +58,8 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-12">
-            <div class="more-btn text-center mt-15">
-                <a href="#" class="border-btn border-btn2 more-btn2">Browse More</a>
-            </div>
+        <div class="col-12">
+            {{ $books->links() }}
         </div>
     </div>
 </div>
